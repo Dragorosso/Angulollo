@@ -7,5 +7,8 @@ angular.module('andlollo',['ngRoute'])
 
         .when('/signup', {
             templateUrl: 'html/signup.html'
-        });
+        })
+        .when('/examplePage',{
+            templateUrl: 'html/examplePage.html'
+    });
 });
