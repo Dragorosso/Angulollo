@@ -1,7 +1,8 @@
 /**
  * Created by andre on 09/05/2017.
  */
-andlollo.config(function($routeProvider) {
+angular.module('andlollo',['ngRoute'])
+    .config(function($routeProvider) {
     $routeProvider
 
         .when('/signup', {
