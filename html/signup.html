@@ -1,64 +1,10 @@
-<!--
-<style>
-    input:invalid {
-        border: 1px solid red;
-    }
-    form input.ng-invalid:not(.ng-pristine) {
-        box-shadow: 0px 0px 13px rgba(255, 133, 0, 0.9);
-    }
-    .error-message {
-        padding: 12px;
-        background-color: rgba(255, 133, 0, 0.1);
-        font-weight: bold;
-    }
+<h1> Ciao Marika</h1>
 
-</style>
-
-<h1 class="center">sei in signuppo</h1>
-
-<form name="form" novalidate>
-    <input placeholder="User Name"
-           name="name" ng-model="theName" ng-model-options="{updateOn:'blur'}"
-           required pattern=".{2,}" />
-    <div class="error-message"
-         ng-show="form.name.$invalid && !form.name.$pristine">
-        We need a name with 2 chars or more.
-    </div>
-    <input placeholder="E-mail"
-           name="email" ng-model="theEmail" ng-model-options="{updateOn:'blur'}"
-           required type="email" />
-    <div class="error-message"
-         ng-show="form.email.$invalid && !form.email.$pristine">
-        We need a valid e-mail address.
-    </div>
-    <input placeholder="Password"
-           name="pwd" ng-model="thePwd" ng-model-options="{ updateOn: 'blur' }"
-           required type="password" pattern=".{2,}" />
-    <div class="error-message"
-         ng-show="form.password.$invalid && !form.password.$pristine">
-        Passwords must have at least 2 chars.
-    </div>
-    <input placeholder="Check Password"
-           name="check" ng-model="chkPwd"
-           type="password" wj-wjValidationError="chkPwd != thePwd " />
-
-    <div class="error-message"
-         ng-show="form.check.$invalid && !form.check.$pristine">
-        Sorry, the passwords don't match.
-    </div>
-    <button type="submit"
-            ng-disabled="form.$invalid">
-        Register
-    </button>
-</form>
-
-
-<form  name="prova">
+<form  name="provaForm">
     <label>Pwd</label>
-    <input type="text" name="passwordverify" ng-model="user.password" ng-pattern="user.retypepassword" >
+    <input type="text" name="passwordverify" ng-model="password" ng-pattern="retypepassword" >
     <label>Retype Pwd</label>
-    <input type="text" name="passwordReverify" ng-model="user.retypepassword">
+    <input type="text" name="passwordReverify" ng-model="retypepassword">
 
-</form>-->
-
-
+    <input type ="submit" value="submit" ng-disabled="provaForm.$invalid">
+</form>

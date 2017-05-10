@@ -23,21 +23,13 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="#!/signup">Signup</a></li>
             <li><a href="#!/examplePage">examplePage</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
+            <li><a href="#!/profile">Profile</a></li>
         </ul>
     </div>
 </nav>
 <div ng-view></div>
 
 
-<form  name="provaForm">
-    <label>Pwd</label>
-    <input type="text" name="passwordverify" ng-model="password" ng-pattern="retypepassword" >
-    <label>Retype Pwd</label>
-    <input type="text" name="passwordReverify" ng-model="retypepassword">
-
-    <input type ="submit" value="submit" ng-disabled="provaForm.$invalid">
-</form>
 
 
 </body>
