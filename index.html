@@ -1,47 +1,234 @@
+<style>
+
+  html {
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+    margin: 0;
+  }
+
+  .card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+  }
+
+  .card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+  }
+
+  .card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+  }
+
+  .card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+  }
+
+  .card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+  }
+
+  .card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+  }
+
+  .profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+
+  .profile-avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+  }
+
+  .profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+  }
+
+  .profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+  }
+
+  .text-bold {
+    font-weight: 700;
+  }
+
+  .meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+  }
+
+  .meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+  }
+
+  .meta a:hover {
+    color: rgba(0, 0, 0, .87);
+  }
+
+</style>
+
 <!DOCTYPE html>
-<html  ng-app="andlollo" lang="en" >
 
-
-
-<link rel="stylesheet" type="text/css" href="css/materialize.css"/>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>-->
-
-
+<!-- define angular app -->
+<html ng-app="myApp" >
 
 <head>
+  <!-- Angular -->
+  <script src="angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.4/angular-route.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Libs -->
+
+  <script src="app.js"></script>
+  <script src="controller.js"></script>
+  <script src="controllerTest.js"></script>
+  <script src="servizioTest.js"></script>
+  <script src="routing.js"></script>
+  <script src="capitalize.js"></script>
+  <script src="directive.js"></script>
+  <script src="direttivaTest.js"></script>
 
 
-    <meta charset="UTF-8">
-    <title>Angulollo</title>
 </head>
-<body>
-<nav>
-    <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Angulollo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#!/signup">Signup</a></li>
-            <li><a href="#!/examplePage">examplePage</a></li>
-            <li><a href="#!/profile">Profile</a></li>
-        </ul>
+
+<body ng-controller="firstController">
+
+<!-- NavBar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Coze Zozze in Angular</a>
     </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#!/home">Home</a></li>
+      <li><a href="#!/home">Home</a></li>
+      <li><a href="#!/limone">Limone</a></li>
+      <li><a href="#!/about">About</a></li>
+      <li><a href="#!/contact">Contact</a></li>
+    </ul>
+  </div>
 </nav>
+
+
+
+<titolo></titolo>
+
+<h1>{{3+4}}</h1>
+<form ng-submit="goNumeretto(numeretto)" >
+Inserisci il numero dell'utente:
+Enter numeretto: <input type = "text" ng-model = "numeretto"><br>
+<button type="submit">Vai</button>
+<br>
+</form>
+
+
 <div ng-view></div>
 
 
 
+<!--
 
+
+<div>
+First Name: <input type="text" ng-model="firstName"><br>
+Last Name: <input type="text" ng-model="lastName"><br>
+<br>
+Full Name: {{firstName + " " + lastName}}
+</div>
+
+<div>
+  <select ng-model="selectedItem"
+          ng-options="value for (key, value) in citta"
+          multiple="true">
+  </select>
+</div>
+<div>
+  <div>
+    <input type="number" ng-model="numero1"/>
+    +
+    <input type="number" ng-model="numero2"/>
+    =
+    <input type="number" ng-model="risultato"/>
+
+    <button ng-click="somma(numero1, numero2, $event)">Somma</button>
+  </div>
+
+  <p>{{"questo è un test" | capitalize}}</p>
+
+  <div>
+    <h2>Esempio integrazione 2 controller e servizio</h2>
+
+    <div ng-controller="cittaController">
+      <p>Città: <input type="text" ng-model="nome"/></p>
+      <p>Regione: <input type="text" ng-model="regione"/></p>
+      <p><button ng-click="aggiungiCitta()">Aggiungi</button></p>
+    </div>
+
+    <div ng-controller="elencoController">
+      <ul>
+        <li ng-repeat="citta in elencoCitta">{{citta.nome}}</li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>-->
 </body>
 
-
-
-<!-- js files -->
-
-<script src="js/libs/jquery.min.js"></script>
-<script src="js/libs/materialize.js"></script>
-<script src="js/libs/angular.js"></script>
-<script src="js/libs/angular-route.js"></script>
-<script src="js/app.js"></script>
-<script src="js/routing.js"></script>
 </html>
+
